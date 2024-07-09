@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    Cookie tests
+  </head>
+  <body>
+    Cookie tests
+    <p></p>
+  </body>
+  <script>
+    const p = document.querySelector('p');
+    fetch('http://localhost:4000/cookie', {
+      method: 'GET',
+      credentials: 'include',
+    })
+      .then((response) => {
+        if (!response.ok) {
+          p.textContent = 'Error occured';
+        }
+        return response.text();
+      })
+      .then((data) => {
+        p.textContent = data;
+      });
+  </script>
+</html>
