@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    Cookie tests
+    Cookie tests header
   </head>
   <body>
-    Cookie tests
+    <br />
+    <br />
+    Cookie tests body
+    <br />
+    <br />
     <p></p>
   </body>
   <script>
     const p = document.querySelector('p');
-    //const host = 'http://localhost:3000';
-    const host =
-      'https://new-express-project-gzurgh9eh-wedothebest4yous-projects.vercel.app';
 
-    fetch(host + '/cookie', {
+    fetch('/cookie', {
       method: 'GET',
-      credentials: 'include',
     })
       .then((response) => {
         if (!response.ok) {
