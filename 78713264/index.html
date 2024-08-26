@@ -6,13 +6,16 @@
   <body>
     Cookie tests
     <p></p>
+    <label>API URL</label>
+    <input id="apiurl" value="text"></input>
+    <button id="retrieve"></button>
   </body>
   <script>
     const p = document.querySelector('p');
-    const host =
-      'https://new-express-project-lxo25p9y1-wedothebest4yous-projects.vercel.app';
+    const apiurl = document.getElementById('apiurl');
+    const host = apiurl.value;
 
-    fetch(host, {
+    fetch('https://new-express-project-40hzj7rkn-wedothebest4yous-projects.vercel.app', {
       method: 'GET',
       credentials: 'include',
     })

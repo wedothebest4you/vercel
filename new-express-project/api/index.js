@@ -3,9 +3,19 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: 'http://localhost:2000',
+    credentials: true,
+  })
+);
 
 app.get('/', (req, res) => {
+  console.log(
+    `Access-Control-Allow-Origin : ${res.getHeader(
+      'Access-Control-Allow-Origin'
+    )}`
+  );
   res.send('done');
 });
 

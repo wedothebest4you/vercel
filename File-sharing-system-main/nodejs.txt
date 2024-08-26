@@ -1,0 +1,4 @@
+- Error due to dns would be beacuse of the dns address can't access your mongodb app ,therefore add the address 
+(8.8.8.8) manually to your IPv4 .
+
+- 

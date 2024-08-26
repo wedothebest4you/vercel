@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    Preflight tests
+  </head>
+  <body>
+    <br />
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+  </body>
+  <script>
+    const url = 'https://cors-test-se9y.onrender.com';
+    async function preflight() {
+      const p1 = document.getElementById('p1');
+      p1.textContent = await fetch(url, {
+        method: 'DELETE',
+        credentials: 'include',
+      }).then((response) => response.text().then((data) => data));
+
+      const p2 = document.getElementById('p2');
+      p2.textContent = await fetch(url, {
+        method: 'PUT',
+        credentials: 'include',
+      }).then((response) => response.text().then((data) => data));
+
+      const p3 = document.getElementById('p3');
+      p3.textContent = await fetch(url, {
+        method: 'PATCH',
+        credentials: 'include',
+      }).then((response) => response.text().then((data) => data));
+    }
+    preflight();
+  </script>
+</html>
