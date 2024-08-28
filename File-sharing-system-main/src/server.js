@@ -58,7 +58,8 @@ app.use(function (request, response, next) {
 //Creating the mailing logic
 app.use(formidable());
 
-let sender = 'oluwafunmikelaja@gmail.com'; //nodemailerform
+//let sender = 'oluwafunmikelaja@gmail.com'; //nodemailerform
+let sender = 'weworkbetter@gmail.com'; //nodemailerform
 let nodemailerObject = {
   service: 'gmail',
   host: 'smtp.gmail.com',
@@ -149,7 +150,7 @@ app.post('/Register', async (request, result) => {
               verification_token +
               "'>Confirm Email </a> <br><br> Thank you";
 
-            await transporter.sendMail(
+            transporter.sendMail(
               {
                 from: sender, // Use the email address from the auth object
                 to: email,
@@ -200,5 +201,4 @@ app.post('/Register', async (request, result) => {
   }
 });
 
-export default app; // change 2
 //It is neither sending the message nor giving any feedback for the new user
