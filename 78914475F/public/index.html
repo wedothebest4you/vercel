@@ -8,8 +8,8 @@
   </body>
   <script>
     async function fetchdata() {
+      const p = document.querySelector('p');
       try {
-        const p = document.querySelector('p');
         const response = await fetch('https://78914475-b.vercel.app', {
           mode: 'cors',
           credentials: 'include',
@@ -17,11 +17,12 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ somekey: 1 }),
         });
-        p.textContent = p;
+        p.textContent = await response.text();
       } catch (err) {
         p.textContent = err;
       }
     }
     fetchdata();
+    //window.location = 'https://78914475-b.vercel.app';
   </script>
 </html>
